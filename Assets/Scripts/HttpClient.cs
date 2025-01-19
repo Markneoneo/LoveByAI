@@ -8,6 +8,10 @@ public class HttpClient : MonoBehaviour
     public static HttpClient instance { get; private set; } // Singleton instance
 
     public TMP_Text ResponseText;
+    public GameObject passText;
+    public GameObject passImage;
+    public GameObject failText;
+    public GameObject failImage;
 
     private string url = "http://127.0.0.1:8000/play/";  // FastAPI backend endpoint
 
@@ -31,7 +35,7 @@ public class HttpClient : MonoBehaviour
         }
     }
 
-    public void get(string user,string scenario,string personality,string action)
+    public void get(string user,string scenario,string personality,string rizz)
     {
         username = user;
         /*        string jsonData = $@"
@@ -46,7 +50,7 @@ public class HttpClient : MonoBehaviour
         jsonData2 += "  \"username\": \"" + user + "\",\n";
         jsonData2 += "  \"personality\": \"" + personality + "\",\n";
         jsonData2 += "  \"scenario\": \"" + scenario + "\",\n";
-        jsonData2 += "  \"action\": \"" + action + "\"\n";
+        jsonData2 += "  \"action\": \"" + rizz.Trim() + "\"\n";
         jsonData2 += "}";
 
 
@@ -89,7 +93,23 @@ public class HttpClient : MonoBehaviour
                 //Debug.Log("Response: " + www.downloadHandler.text);
                 AIOutput ai  = JsonUtility.FromJson<AIOutput>(www.downloadHandler.text);
                 Debug.Log(ai.Story);
+                Debug.Log(ai.Verdict);
                 ResponseText.text = ai.Story;
+                if(ai.Verdict == "Pass")
+                {
+                    passText.SetActive(true);
+                    passImage.SetActive(true);
+                    failText.SetActive(false);
+                    failImage.SetActive(false);
+                }
+                else
+                {
+                    passText.SetActive(false);
+                    passImage.SetActive(false);
+                    failText.SetActive(true);
+                    failImage.SetActive(true);
+
+                }
                 //string jsonString = JsonUtility.ToJson(www.downloadHandler.text);
             }
             else

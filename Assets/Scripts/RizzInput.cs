@@ -6,8 +6,8 @@ public class RizzInput : MonoBehaviour
 {
     // Static instance of the class
     public TMP_InputField rizzInputField;
-    private string finalInput;
-    public static RizzInput Instance { get; private set; }
+    private static string finalInput;
+    public static RizzInput Instance { get; set; }
 
 /*    private void Start()
     {

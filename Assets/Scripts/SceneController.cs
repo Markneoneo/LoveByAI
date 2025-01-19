@@ -11,7 +11,7 @@ public class SceneController : MonoBehaviour
     public GameObject inputScreen;
     public GameObject resultScreen;
     public string username = "";
-    public string rizz = "";
+    public string rizz;
     // public GameObject settingsScreen;
     // public GameObject creditsScreen;
 
@@ -65,6 +65,9 @@ public class SceneController : MonoBehaviour
         Debug.Log("Text Submitted: " + text);
         //UserName.Instance.updateName(text);
         rizz = text;
+        Debug.Log("RIZZ VALIUE: " + rizz);
+        HttpClient.instance.get(username, Scenario.Instance.get(), Personality.Instance.get(), rizz);
+
     }
 
     #region Screen Select
@@ -108,7 +111,6 @@ public class SceneController : MonoBehaviour
     public void ResultSelect()
     {
         //rizzText = rizzInputField.text;
-        HttpClient.instance.get(username, Scenario.Instance.get(),Personality.Instance.get(),rizz);
         inputScreen.SetActive(false);
         resultScreen.SetActive(true);
     }
