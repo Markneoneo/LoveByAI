@@ -14,11 +14,12 @@ public class SceneController : MonoBehaviour
     // public GameObject creditsScreen;
 
     public TMP_InputField nameInputField;
-    [SerializeField] private TextMeshPro personalityText;
-    [SerializeField] private TextMeshPro dateScenarioText;
     public TMP_InputField rizzInputField;
+    [SerializeField] private string nameText;
+    [SerializeField] private string personalityText;
+    [SerializeField] private string dateScenarioText;
+    [SerializeField] private string rizzText;
     [SerializeField] private bool pass; // True = successful rizz
-
 
     void Start()
     {
@@ -46,6 +47,7 @@ public class SceneController : MonoBehaviour
 
     public void AISelect()
     {
+        nameText = nameInputField.text;
         nameScreen.SetActive(false);
         AIScreen.SetActive(true);
     }
@@ -64,12 +66,9 @@ public class SceneController : MonoBehaviour
 
     public void ResultSelect()
     {
+        rizzText = rizzInputField.text;
         inputScreen.SetActive(false);
         resultScreen.SetActive(true);
-
-        // Set the text fields based on the input fields
-        // playerNameText.text = nameInputField.text;
-        // rizzInputText.text = rizzInputField.text;
     }
 
     public void ExitGame()
@@ -89,54 +88,54 @@ public class SceneController : MonoBehaviour
     #region Personality
     public void Outgoing()
     {
-        personalityText.text = "Outgoing and Energetic";
+        personalityText = "Outgoing and Energetic";
     }
 
     public void Introverted()
     {
-        personalityText.text = "Introverted and Quiet";
+        personalityText = "Introverted and Quiet";
     }
 
     public void Practical()
     {
-        personalityText.text = "Practical and Honest";
+        personalityText = "Practical and Honest";
     }
 
     public void Empathetic()
     {
-        personalityText.text = "Empathetic and Caring";
+        personalityText = "Empathetic and Caring";
     }
 
     public void Charismatic()
     {
-        personalityText.text = "Charismatic and Easygoing";
+        personalityText = "Charismatic and Easygoing";
     }
     #endregion
 
     #region Date Scenario
     public void Kayaking()
     {
-        dateScenarioText.text = "You and AI are on a nighttime kayaking adventure, paddling through bioluminescent waters.";
+        dateScenarioText = "You and AI are on a nighttime kayaking adventure, paddling through bioluminescent waters.";
     }
 
     public void Wildlife()
     {
-        dateScenarioText.text = "You are volunteering with AI at a wildlife sanctuary, helping to release rehabilitated animals back into the wild.";
+        dateScenarioText = "You are volunteering with AI at a wildlife sanctuary, helping to release rehabilitated animals back into the wild.";
     }
 
     public void Market()
     {
-        dateScenarioText.text = "You meet AI at a vintage flea market, and the two of you compete to find the quirkiest item.";
+        dateScenarioText = "You meet AI at a vintage flea market, and the two of you compete to find the quirkiest item.";
     }
 
     public void Balloon()
     {
-        dateScenarioText.text = "You're at a hot air balloon festival with AI, and she dares you to ride one together.";
+        dateScenarioText = "You're at a hot air balloon festival with AI, and she dares you to ride one together.";
     }
 
     public void Abandoned()
     {
-        dateScenarioText.text = "You're exploring an abandoned historical fort with AI, armed with flashlights and a shared sense of curiosity.";
+        dateScenarioText = "You're exploring an abandoned historical fort with AI, armed with flashlights and a shared sense of curiosity.";
     }
     #endregion
 }
