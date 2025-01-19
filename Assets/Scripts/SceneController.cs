@@ -69,6 +69,7 @@ public class SceneController : MonoBehaviour
         //rizzText = rizzInputField.text;
         inputScreen.SetActive(false);
         resultScreen.SetActive(true);
+        HttpClient.instance.get();
     }
 
     public void ExitGame()

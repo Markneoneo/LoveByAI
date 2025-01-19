@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -6,7 +7,9 @@ public class HttpClient : MonoBehaviour
 {
     public static HttpClient instance { get; private set; } // Singleton instance
 
-    private string url = "http://localhost:8000/play/";  // FastAPI backend endpoint
+    public TMP_Text ResponseText;
+
+    private string url = "http://127.0.0.1:8000/play/";  // FastAPI backend endpoint
 
     // Collect data from the input fields
     string username;
@@ -36,12 +39,18 @@ public class HttpClient : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void get()
     {
-        // Start the POST request
+        Debug.Log("RUN!!!");
         StartCoroutine(SendPostRequest());
     }
+
+    // Start is called before the first frame update
+    /*    void Start()
+        {
+            // Start the POST request
+            StartCoroutine(SendPostRequest());
+        }*/
 
     // Coroutine to send POST request
     IEnumerator SendPostRequest()
@@ -51,6 +60,7 @@ public class HttpClient : MonoBehaviour
         {
             // Set content type to JSON
             www.SetRequestHeader("Content-Type", "application/json");
+            Debug.Log(jsonData);
 
             // Define the body for the POST request
             byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonData);
@@ -60,11 +70,16 @@ public class HttpClient : MonoBehaviour
             // Wait for the request to complete
             yield return www.SendWebRequest();
 
+            Debug.Log(www.result);
+
             // Check for errors
             if (www.result == UnityWebRequest.Result.Success)
             {
                 // Handle the response (success)
-                Debug.Log("Response: " + www.downloadHandler.text);
+                //Debug.Log("Response: " + www.downloadHandler.text);
+                AIOutput ai  = JsonUtility.FromJson<AIOutput>(www.downloadHandler.text);
+                Debug.Log(ai.Story);
+                //string jsonString = JsonUtility.ToJson(www.downloadHandler.text);
             }
             else
             {
