@@ -12,18 +12,10 @@ public class HttpClient : MonoBehaviour
     private string url = "http://127.0.0.1:8000/play/";  // FastAPI backend endpoint
 
     // Collect data from the input fields
-    string username;
+    public string username;
     string personality;
     string scenario;
     string action;
-
-    string jsonData = $@"
-         {{
-             ""username"": ""{UserName.Instance.get()}"",
-             ""personality"": ""{Personality.Instance.get()}"",
-             ""scenario"": ""{Scenario.Instance.get()}"",
-             ""action"": ""{RizzInput.Instance.get()}""
-         }}";
 
     void Awake()
     {
@@ -39,10 +31,27 @@ public class HttpClient : MonoBehaviour
         }
     }
 
-    public void get()
+    public void get(string user,string scenario,string personality,string action)
     {
+        username = user;
+        /*        string jsonData = $@"
+                {{
+                    ""username"": ""{username}"",
+                    ""personality"": ""{(Personality.Instance != null ? Personality.Instance.get() : "default")}"",
+                    ""scenario"": ""{(Scenario.Instance != null ? Scenario.Instance.get() : "default")}"",
+                    ""action"": ""{(RizzInput.Instance != null ? RizzInput.Instance.get() : "default")}""
+                }}";*/
+
+        string jsonData2 = "{\n";
+        jsonData2 += "  \"username\": \"" + user + "\",\n";
+        jsonData2 += "  \"personality\": \"" + personality + "\",\n";
+        jsonData2 += "  \"scenario\": \"" + scenario + "\",\n";
+        jsonData2 += "  \"action\": \"" + action + "\"\n";
+        jsonData2 += "}";
+
+
         Debug.Log("RUN!!!");
-        StartCoroutine(SendPostRequest());
+        StartCoroutine(SendPostRequest(jsonData2));
     }
 
     // Start is called before the first frame update
@@ -53,9 +62,10 @@ public class HttpClient : MonoBehaviour
         }*/
 
     // Coroutine to send POST request
-    IEnumerator SendPostRequest()
+    IEnumerator SendPostRequest(string jsonData)
     {
         // Create a UnityWebRequest to send a POST request
+        Debug.Log(jsonData);
         using (UnityWebRequest www = UnityWebRequest.PostWwwForm(url, jsonData))
         {
             // Set content type to JSON
@@ -79,6 +89,7 @@ public class HttpClient : MonoBehaviour
                 //Debug.Log("Response: " + www.downloadHandler.text);
                 AIOutput ai  = JsonUtility.FromJson<AIOutput>(www.downloadHandler.text);
                 Debug.Log(ai.Story);
+                ResponseText.text = ai.Story;
                 //string jsonString = JsonUtility.ToJson(www.downloadHandler.text);
             }
             else

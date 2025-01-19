@@ -5,7 +5,8 @@ public class UserName : MonoBehaviour
 {
     // Static instance of the class
     public TMP_InputField nameInputField;
-    public static UserName Instance { get; private set; }
+    public static string nameField;
+    public static UserName Instance { get; set; }
 
     private void Awake()
     {
@@ -24,6 +25,13 @@ public class UserName : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public string get() { return nameInputField.text; }
+    public void updateName(string text)
+    {
+        nameField = text;
+    }
 
+    public string get() {
+        Debug.Log("NAME: " + nameField);
+        return nameField;
+    }
 }
