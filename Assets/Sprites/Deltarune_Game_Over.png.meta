@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Deltarune_Game_Over_0: 5612314056785525592
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
