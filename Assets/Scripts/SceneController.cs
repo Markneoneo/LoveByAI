@@ -8,9 +8,10 @@ public class SceneController : MonoBehaviour
     public GameObject nameScreen;
     public GameObject AIScreen;
     public GameObject dateScreen;
-    public GameObject gameScreen;
-    public GameObject settingsScreen;
-    public GameObject creditsScreen;
+    public GameObject inputScreen;
+    public GameObject resultScreen;
+    // public GameObject settingsScreen;
+    // public GameObject creditsScreen;
 
     void Start()
     {
@@ -24,9 +25,10 @@ public class SceneController : MonoBehaviour
         nameScreen.SetActive(false);
         AIScreen.SetActive(false);
         dateScreen.SetActive(false);
-        gameScreen.SetActive(false);
-        settingsScreen.SetActive(false);
-        creditsScreen.SetActive(false);
+        inputScreen.SetActive(false);
+        resultScreen.SetActive(false);
+        // settingsScreen.SetActive(false);
+        // creditsScreen.SetActive(false);
     }
 
     public void NameSelect()
@@ -47,21 +49,27 @@ public class SceneController : MonoBehaviour
         dateScreen.SetActive(true);
     }
 
-    public void GameSelect()
+    public void InputSelect()
     {
         dateScreen.SetActive(false);
-        gameScreen.SetActive(true);
+        inputScreen.SetActive(true);
     }
 
-    public void ToggleSettings()
+    public void ResultSelect()
     {
-        settingsScreen.SetActive(!settingsScreen.activeSelf);
+        inputScreen.SetActive(false);
+        resultScreen.SetActive(true);
     }
 
-    public void ToggleCredits()
-    {
-        creditsScreen.SetActive(!creditsScreen.activeSelf);
-    }
+    // public void ToggleSettings()
+    // {
+    //     settingsScreen.SetActive(!settingsScreen.activeSelf);
+    // }
+
+    // public void ToggleCredits()
+    // {
+    //     creditsScreen.SetActive(!creditsScreen.activeSelf);
+    // }
 
     public void ExitGame()
     {
