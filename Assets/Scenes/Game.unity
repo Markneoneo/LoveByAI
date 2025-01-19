@@ -753,7 +753,7 @@ GameObject:
   - component: {fileID: 355247891}
   - component: {fileID: 355247890}
   m_Layer: 5
-  m_Name: Personality (1)
+  m_Name: Senario1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -842,6 +842,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1160490322}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
         m_MethodName: InputSelect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1160490322}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: Wildlife
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1760,7 +1772,7 @@ MonoBehaviour:
   m_KeepTextSelectionVisible: 0
   m_RestoreOriginalTextOnEscape: 1
   m_isRichTextEditingAllowed: 0
-  m_LineLimit: 10
+  m_LineLimit: 5
   isAlert: 0
   m_InputValidator: {fileID: 0}
   m_ShouldActivateOnSelect: 1
@@ -2754,6 +2766,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1160490322}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: Practical
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &931884861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2806,7 +2830,7 @@ GameObject:
   - component: {fileID: 992497288}
   - component: {fileID: 992497287}
   m_Layer: 5
-  m_Name: Personality (5)
+  m_Name: Personality 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2904,6 +2928,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1160490322}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: Empathetic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &992497289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2956,7 +2992,7 @@ GameObject:
   - component: {fileID: 995552771}
   - component: {fileID: 995552770}
   m_Layer: 5
-  m_Name: Personality (3)
+  m_Name: Senario2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3045,6 +3081,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1160490322}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
         m_MethodName: InputSelect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1160490322}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: Market
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3373,16 +3421,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1100131628}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 7.5, y: 7.5, z: 7.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1311825786}
+  m_Father: {fileID: 1810390565}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 57.6, y: 30}
+  m_AnchoredPosition: {x: 288.00003, y: 150}
   m_SizeDelta: {x: 27, y: 12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1100131630
@@ -3619,6 +3667,11 @@ MonoBehaviour:
   dateScreen: {fileID: 1968127699}
   inputScreen: {fileID: 1895283079}
   resultScreen: {fileID: 1768677361}
+  nameInputField: {fileID: 1311825787}
+  personalityText: {fileID: 0}
+  dateScenarioText: {fileID: 0}
+  rizzInputField: {fileID: 476160222}
+  pass: 0
 --- !u!4 &1160490323
 Transform:
   m_ObjectHideFlags: 0
@@ -3788,11 +3841,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Outdoor
+  m_text: 'Hot-Air
 
-    Movie
+    Balloon
 
-    Screening'
+    Festival'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dfcf50dfd8f56244cb4bac59e5251ea1, type: 2}
   m_sharedMaterial: {fileID: -4965795100146648602, guid: dfcf50dfd8f56244cb4bac59e5251ea1, type: 2}
@@ -3928,11 +3981,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Local
+  m_text: 'Abandoned
 
-    Arcade
+    Historical
 
-    Games'
+    Fort'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dfcf50dfd8f56244cb4bac59e5251ea1, type: 2}
   m_sharedMaterial: {fileID: -4965795100146648602, guid: dfcf50dfd8f56244cb4bac59e5251ea1, type: 2}
@@ -4038,16 +4091,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1223618457}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1311825786}
+  m_Father: {fileID: 1810390565}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 39.1, y: 47.6}
+  m_AnchoredPosition: {x: 195.50003, y: 238.00003}
   m_SizeDelta: {x: 5, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1223618459
@@ -4371,8 +4424,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1631496645}
-  - {fileID: 1100131629}
-  - {fileID: 1223618458}
   m_Father: {fileID: 1810390565}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4588,11 +4639,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Live
+  m_text: 'Vintage
 
-    Band
+    Flea
 
-    Concert'
+    Market'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dfcf50dfd8f56244cb4bac59e5251ea1, type: 2}
   m_sharedMaterial: {fileID: -4965795100146648602, guid: dfcf50dfd8f56244cb4bac59e5251ea1, type: 2}
@@ -5052,6 +5103,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1160490322}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: Introverted
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1452559944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5104,7 +5167,7 @@ GameObject:
   - component: {fileID: 1474582055}
   - component: {fileID: 1474582054}
   m_Layer: 5
-  m_Name: Personality (5)
+  m_Name: Senario4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5193,6 +5256,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1160490322}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
         m_MethodName: InputSelect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1160490322}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: Balloon
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5889,7 +5964,7 @@ GameObject:
   - component: {fileID: 1638696518}
   - component: {fileID: 1638696517}
   m_Layer: 5
-  m_Name: Personality
+  m_Name: Senario
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5978,6 +6053,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1160490322}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
         m_MethodName: InputSelect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1160490322}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: Kayaking
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6273,6 +6360,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1160490322}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: Outgoing
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1757759733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6325,7 +6424,7 @@ GameObject:
   - component: {fileID: 1763795062}
   - component: {fileID: 1763795061}
   m_Layer: 5
-  m_Name: Personality (4)
+  m_Name: Senario3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6414,6 +6513,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1160490322}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
         m_MethodName: InputSelect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1160490322}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: Abandoned
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6755,6 +6866,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1293492393}
+  - {fileID: 1100131629}
+  - {fileID: 1223618458}
   - {fileID: 1311825786}
   m_Father: {fileID: 440467993}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6820,11 +6933,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Coffee
+  m_text: 'Nighttime
 
-    Shop
+    Kayaking
 
-    Meet'
+    Adventure'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dfcf50dfd8f56244cb4bac59e5251ea1, type: 2}
   m_sharedMaterial: {fileID: -4965795100146648602, guid: dfcf50dfd8f56244cb4bac59e5251ea1, type: 2}
@@ -7282,6 +7395,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1160490322}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
         m_MethodName: DateSelect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1160490322}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: Charismatic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8009,7 +8134,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Scenic \nHiking \nTrial"
+  m_text: 'Animal
+
+    Wildlife
+
+    Sanctuary'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dfcf50dfd8f56244cb4bac59e5251ea1, type: 2}
   m_sharedMaterial: {fileID: -4965795100146648602, guid: dfcf50dfd8f56244cb4bac59e5251ea1, type: 2}

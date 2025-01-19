@@ -13,14 +13,21 @@ public class SceneController : MonoBehaviour
     // public GameObject settingsScreen;
     // public GameObject creditsScreen;
 
+    public TMP_InputField nameInputField;
+    [SerializeField] private TextMeshPro personalityText;
+    [SerializeField] private TextMeshPro dateScenarioText;
+    public TMP_InputField rizzInputField;
+    [SerializeField] private bool pass; // True = successful rizz
+
+
     void Start()
     {
         MenuSelect();
     }
 
+    #region Screen Select
     public void MenuSelect()
     {
-        // Activate title screen only
         titleScreen.SetActive(true);
         nameScreen.SetActive(false);
         AIScreen.SetActive(false);
@@ -59,28 +66,77 @@ public class SceneController : MonoBehaviour
     {
         inputScreen.SetActive(false);
         resultScreen.SetActive(true);
+
+        // Set the text fields based on the input fields
+        // playerNameText.text = nameInputField.text;
+        // rizzInputText.text = rizzInputField.text;
     }
-
-    // public void ToggleSettings()
-    // {
-    //     settingsScreen.SetActive(!settingsScreen.activeSelf);
-    // }
-
-    // public void ToggleCredits()
-    // {
-    //     creditsScreen.SetActive(!creditsScreen.activeSelf);
-    // }
 
     public void ExitGame()
     {
-        Application.Quit();
         Debug.Log("Game is exiting");
+        Application.Quit();
     }
 
-    IEnumerator ShowMessage(GameObject message)
+    // IEnumerator ShowMessage(GameObject message)
+    // {
+    //     message.SetActive(true);
+    //     yield return new WaitForSeconds(5);
+    //     message.SetActive(false);
+    // }
+    #endregion
+
+    #region Personality
+    public void Outgoing()
     {
-        message.SetActive(true);
-        yield return new WaitForSeconds(5);
-        message.SetActive(false);
+        personalityText.text = "Outgoing and Energetic";
     }
+
+    public void Introverted()
+    {
+        personalityText.text = "Introverted and Quiet";
+    }
+
+    public void Practical()
+    {
+        personalityText.text = "Practical and Honest";
+    }
+
+    public void Empathetic()
+    {
+        personalityText.text = "Empathetic and Caring";
+    }
+
+    public void Charismatic()
+    {
+        personalityText.text = "Charismatic and Easygoing";
+    }
+    #endregion
+
+    #region Date Scenario
+    public void Kayaking()
+    {
+        dateScenarioText.text = "You and AI are on a nighttime kayaking adventure, paddling through bioluminescent waters.";
+    }
+
+    public void Wildlife()
+    {
+        dateScenarioText.text = "You are volunteering with AI at a wildlife sanctuary, helping to release rehabilitated animals back into the wild.";
+    }
+
+    public void Market()
+    {
+        dateScenarioText.text = "You meet AI at a vintage flea market, and the two of you compete to find the quirkiest item.";
+    }
+
+    public void Balloon()
+    {
+        dateScenarioText.text = "You're at a hot air balloon festival with AI, and she dares you to ride one together.";
+    }
+
+    public void Abandoned()
+    {
+        dateScenarioText.text = "You're exploring an abandoned historical fort with AI, armed with flashlights and a shared sense of curiosity.";
+    }
+    #endregion
 }
