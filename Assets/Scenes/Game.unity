@@ -3642,6 +3642,7 @@ GameObject:
   - component: {fileID: 1160490323}
   - component: {fileID: 1160490322}
   - component: {fileID: 1160490324}
+  - component: {fileID: 1160490325}
   m_Layer: 0
   m_Name: SceneController
   m_TagString: Untagged
@@ -3668,9 +3669,11 @@ MonoBehaviour:
   inputScreen: {fileID: 1895283079}
   resultScreen: {fileID: 1768677361}
   nameInputField: {fileID: 1311825787}
-  personalityText: {fileID: 0}
-  dateScenarioText: {fileID: 0}
   rizzInputField: {fileID: 476160222}
+  nameText: 
+  personalityText: 
+  dateScenarioText: 
+  rizzText: 
   pass: 0
 --- !u!4 &1160490323
 Transform:
@@ -3784,6 +3787,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1160490325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160490321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab6e88aa5a9d4214dad95311bad9ec6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: http://localhost:8000/play/
+  jsonData: "\r\n{\r\n    \"username\": \"Betahaxer\",\r\n    \"personality\": \"Introverted
+    and Quiet\",\r\n    \"scenario\": \"local arcade and games\",\r\n    \"action\":
+    \"since the girl is introverted and quiet, I the genius man I am will use sign
+    language to communicate with her, allowing her to maintain her silent facade.
+    Through this, we go through a myriad of fun crane games and racing car simulations
+    together. At the end, I will use the arcade points I earned to buy her a cute
+    plushie, knowing that this will be a great collection to her already large and
+    growing pile of plushies.\"\r\n}"
 --- !u!1 &1161582978
 GameObject:
   m_ObjectHideFlags: 0
