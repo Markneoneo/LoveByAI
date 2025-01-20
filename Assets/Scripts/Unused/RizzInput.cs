@@ -47,12 +47,12 @@ public class RizzInput : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void updateInput(string text)
+    public void UpdateInput(string text)
     {
         finalInput = text;
     }
 
-    public string get()
+    public string Get()
     {
         return finalInput;
     }

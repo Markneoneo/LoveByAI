@@ -1,10 +1,20 @@
 using TMPro;
 using UnityEngine;
+
 public class Personality : MonoBehaviour
 {
-    // Static instance of the class
-    [SerializeField] private string personalityText;
+    // Singleton instance of the class
     public static Personality Instance { get; private set; }
+    private string personalityText;
+
+    public enum PersonalityType
+    {
+        Outgoing,
+        Introverted,
+        Charismatic,
+        Pragmatic,
+        Empathetic,
+    }
 
     private void Awake()
     {
@@ -23,31 +33,36 @@ public class Personality : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void Outgoing()
+    public string PersonalityText
     {
-        personalityText = "Outgoing and Energetic";
+        get => personalityText;
+        private set => personalityText = value;
     }
 
-    public void Introverted()
+    public void SetPersonality(int type)
     {
-        personalityText = "Introverted and Quiet";
+        PersonalityType personalityType = (PersonalityType)type;
+
+        switch (personalityType)
+        {
+            case PersonalityType.Outgoing: // 0
+                PersonalityText = "Outgoing and Energetic";
+                break;
+            case PersonalityType.Introverted: // 1
+                PersonalityText = "Introverted and Quiet";
+                break;
+            case PersonalityType.Charismatic: // 2
+                PersonalityText = "Charismatic and Easygoing";
+                break;
+            case PersonalityType.Pragmatic: // 3
+                PersonalityText = "Pragmatic and Honest";
+                break;
+            case PersonalityType.Empathetic: // 4
+                PersonalityText = "Empathetic and Caring";
+                break;
+        }
+        Debug.Log($"Personality set to: {PersonalityText}");
     }
 
-    public void Practical()
-    {
-        personalityText =  "Practical and Honest";
-    }
-
-    public void Empathetic()
-    {
-        personalityText = "Empathetic and Caring";
-    }
-
-    public void Charismatic()
-    {
-        personalityText = "Charismatic and Easygoing";
-    }
-
-    public string get() { return personalityText; }
-
+    public string Get() => PersonalityText;
 }

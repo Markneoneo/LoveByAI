@@ -1,12 +1,12 @@
-using TMPro;
 using UnityEngine;
+using TMPro;
 
 public class UserName : MonoBehaviour
 {
-    // Static instance of the class
+    // Singleton instance of the class
+    public static UserName Instance { get; set; }
     public TMP_InputField nameInputField;
     public static string nameField;
-    public static UserName Instance { get; set; }
 
     private void Awake()
     {
@@ -25,12 +25,8 @@ public class UserName : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void updateName(string text)
+    public string Get() 
     {
-        nameField = text;
-    }
-
-    public string get() {
         Debug.Log("NAME: " + nameField);
         return nameField;
     }
