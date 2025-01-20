@@ -30,17 +30,20 @@ public class SceneController : MonoBehaviour
         rizzInputField.onEndEdit.AddListener(OnRizzInputSubmitted);
     }
 
-    // private void Update()
-    // {
-    //     // Check if the input field is focused and the Enter key is pressed
-    //     if (rizzInputField.isFocused && Input.GetKeyDown(KeyCode.Return))
-    //     {
-    //         // Trigger the OnEndEdit event
-    //         EventSystem.current.SetSelectedGameObject(null);
-    //         rizzInputField.DeactivateInputField();
-    //         rizzInputField.onEndEdit.Invoke(rizzInputField.text);
-    //     }
-    // }
+    void Update()
+    {
+        // Check if the Escape key is pressed
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            // Close the application
+            Application.Quit();
+
+            // This line is ignored in a build, but useful in the editor
+            #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+            #endif
+        }
+    }
 
     #region Inputs
     private void OnNameInputChanged(string text)

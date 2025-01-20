@@ -55,23 +55,22 @@ public class HttpClient : MonoBehaviour
 
     IEnumerator SendPostRequest(string jsonData)
     {
-        Debug.Log(jsonData); // All player inputs
+        Debug.Log(jsonData); // Log the player input data
 
         // Create a UnityWebRequest to send a POST request
-        using UnityWebRequest www = UnityWebRequest.PostWwwForm(url, jsonData);
+        UnityWebRequest www = new(url, "POST")
+        {
+            uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(jsonData)),
+            downloadHandler = new DownloadHandlerBuffer()
+        };
 
         // Set content type to JSON
         www.SetRequestHeader("Content-Type", "application/json");
 
-        // Define the body for the POST request
-        byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonData);
-        www.uploadHandler = new UploadHandlerRaw(bodyRaw);
-        www.downloadHandler = new DownloadHandlerBuffer();
-
         // Wait for the request to complete
         yield return www.SendWebRequest();
 
-        Debug.Log(www.result); // Result Success / Failure
+        Debug.Log(www.result); // Log the result status
 
         // Check for errors
         if (www.result == UnityWebRequest.Result.Success)
@@ -87,11 +86,15 @@ public class HttpClient : MonoBehaviour
             {
                 loadingResult.SetActive(false);
                 passResult.SetActive(true);
-            } else {
+            } 
+            else 
+            {
                 loadingResult.SetActive(false);
                 failResult.SetActive(true);
             }
-        } else {
+        } 
+        else 
+        {
             // Handle errors (failure)
             Debug.LogError("Error: " + www.error);
         }
